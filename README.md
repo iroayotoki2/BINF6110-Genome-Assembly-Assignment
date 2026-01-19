@@ -75,7 +75,7 @@ The assembled genome will be aligned to the reference genome using **minimap2 v2
 SAM files will be converted to BAM format using:
 
 ```bash
-samtools view -bS
+samtools view -bS input.sam -o output.bam
 ```
 
 The resulting BAM files will then be sorted and indexed using:
