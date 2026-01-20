@@ -66,7 +66,17 @@ This selection is intended to generate high-quality input assemblies using diffe
 
 ### Alignment
 
-The assembled genome will be aligned to the reference genome using **minimap2 v2.30**. The `-a` option will be specified to output alignments in **SAM format** for downstream processing and visualization. The number of threads will be adjusted based on available computational capacity (Li, 2021).
+### Alignment
+
+The assembled genome will be aligned to the reference genome using **minimap2 v2.30**. The `-a` option will be specified to output alignments in **SAM format** for downstream processing and visualization. The number of threads will be adjusted based on available computational capacity(Li, 2021).  
+
+Additional options for assembly-to-reference alignment include:
+
+```bash
+-x asm5   # assembly to genome alignment
+-r2k      # maintain long, unbroken alignments
+--cs      # include the exact sequence of every difference in the output
+```
 
 ---
 
@@ -85,6 +95,14 @@ samtools sort output.bam -o sorted.bam
 samtools index sorted.bam
 ```
 ---
+### Variant Calling
+
+Variant calling will be performed using **SVIM-asm v1.0.3** (Heller & Vingron, 2021) for assembly-to-reference comparison. The following command will be used:
+
+```bash
+svim-asm haploid output_dir sorted.bam reference.fa
+```
+---
 ### Visualization
 
 The indexed BAM files will be visualized against the reference genome FASTA file using the **Integrative Genomics Viewer (IGV v2.19.x)** to examine alignment quality and identify sequence variation (Robinson et al., 2017).
@@ -100,6 +118,8 @@ Chen, Y., Nie, F., Xie, S. Q., Zheng, Y. F., Dai, Q., Bray, T., Wang, Y. X., Xin
 Danecek, P., Bonfield, J. K., Liddle, J., Marshall, J., Ohan, V., Pollard, M. O., Whitwham, A., Keane, T., McCarthy, S. A., & Davies, R. M. (2021). Twelve years of SAMtools and BCFtools. GigaScience, 10(2). https://doi.org/10.1093/GIGASCIENCE/GIAB008
 
 De Coster, W., & Rademakers, R. (2023). NanoPack2: population-scale evaluation of long-read sequencing data. Bioinformatics, 39(5). https://doi.org/10.1093/BIOINFORMATICS/BTAD311
+
+Heller, D., & Vingron, M. (2021). SVIM-asm: structural variant detection from haploid and diploid genome assemblies. Bioinformatics, 36(22–23), 5519–5521. https://doi.org/10.1093/BIOINFORMATICS/BTAA1034
 
 Kolmogorov, M., Yuan, J., Lin, Y., & Pevzner, P. A. (2019). Assembly of long, error-prone reads using repeat graphs. Nature Biotechnology 2019 37:5, 37(5), 540–546. https://doi.org/10.1038/s41587-019-0072-8
 
