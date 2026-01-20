@@ -105,7 +105,7 @@ svim-asm haploid output_dir sorted.bam reference.fa
 ---
 ### Visualization
 
-The indexed BAM files will be visualized against the reference genome FASTA file using the **Integrative Genomics Viewer (IGV v2.19.x)** to examine alignment quality and identify sequence variation (Robinson et al., 2017).
+The indexed BAM files will be visualized against the reference genome FASTA file using the **Integrative Genomics Viewer (IGV v2.19.x)** to examine alignment quality and identify sequence variation using the VCF file generated from variant calling (Robinson et al., 2017).
 
 ---
 ### References
