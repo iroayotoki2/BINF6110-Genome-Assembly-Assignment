@@ -46,7 +46,7 @@ The data used for this assembly will consist of raw *Salmonella enterica* reads 
 Quality control will be performed using **Chopper v0.12.0b** to filter low-quality reads. The following parameters will be used:
 
 - `--quality` = 10 (minimum mean read quality score)  
-- `--minlength` = 500 (minimum read length)  
+- `--minlength` = 1000 (minimum read length)  
 
 All other parameters will remain at their default values (De Coster & Rademakers, 2023).
 
