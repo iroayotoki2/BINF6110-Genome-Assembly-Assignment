@@ -54,19 +54,24 @@ This code used for the filtering step with these parameters is provided below(De
 chopper  -q 10 -l 1000  -i SRR32410565.fastq > filtered_seqs.fastq 
 ```
 
-After filtering
+After filtering, quality check was carried out using **Nanoplot v1.46.2** to view the aveage read quality and length of the filtered reads (De Coster & Rademakers, 2023).
+```bash
+Nanoplot --fastq filtered_seqs.fastq -o QC_After
+```
 
 ---
 
 ### Assembly
 
-Genome assembly will be performed using **AutoCycler v0.5.2** with fully automated commands. Input assemblies will be restricted to:
+Genome assembly was performed using **AutoCycler v0.5.2** with fully automated commands. Input assemblies will be restricted to:
 
 - **Flye v2.9.6**  
 - **Raven v1.8.3**  
 - **NECAT v0.0.1_update20200803**
 
-This selection is intended to generate high-quality input assemblies using different assembly paradigms, including **A-Bruijn graph** and **overlap-layout-consensus (OLC)** approaches, in order to reduce errors while maximizing completeness and contiguity. The number of computational threads will be set according to available computing resources (Chen et al., 2021; Kolmogorov et al., 2019; Vaser & Šikić, 2021; Wick et al., 2025).
+This selection was intended to generate high-quality input assemblies using different assembly paradigms, including **A-Bruijn graph** and **overlap-layout-consensus (OLC)** approaches, in order to reduce errors while maximizing completeness and contiguity. The number of computational threads will be set according to available computing resources. The assembly was carried out with an edited automated bash script provided by the developers of Autocycler on their Github page. The edits done were to select the chosen individual assembly tools. 
+
+The bash script can be found in this repository () (Chen et al., 2021; Kolmogorov et al., 2019; Vaser & Šikić, 2021; Wick et al., 2025).
 
 ---
 
