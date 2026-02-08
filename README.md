@@ -108,6 +108,11 @@ svim-asm haploid output_dir sorted.bam reference.fa
 The indexed BAM files will be visualized against the reference genome FASTA file using the **Integrative Genomics Viewer (IGV v2.19.x)** to examine alignment quality and identify sequence variation using the VCF file generated from variant calling (Robinson et al., 2017).
 
 ---
+
+![Bandage graph](./Bandage_graph.png)
+
+---
+
 ### References
 Brown, E. W., Bell, R., Zhang, G., Timme, R., Zheng, J., Hammack, T. S., & Allard, M. W. (2021). Salmonella Genomics in Public Health and Food Safety. EcoSal Plus, 9(2). https://doi.org/10.1128/ECOSALPLUS.ESP-0008-2020
 
