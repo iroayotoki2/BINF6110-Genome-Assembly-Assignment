@@ -48,7 +48,7 @@ Quality control was performed using **Chopper v0.12.0b** to filter low-quality r
 - `--quality` = 10 (minimum mean read quality score)  
 - `--minlength` = 1000 (minimum read length)
 
-All other parameters will remain at their default values.
+All other parameters remained at their default values.
 This code used for the filtering step with these parameters is provided below(De Coster & Rademakers, 2023).
 ```bash
 chopper  -q 10 -l 1000  -i SRR32410565.fastq > filtered_seqs.fastq 
@@ -63,60 +63,80 @@ Nanoplot --fastq filtered_seqs.fastq -o QC_After
 
 ### Assembly
 
-Genome assembly was performed using **AutoCycler v0.5.2** with fully automated commands. Input assemblies will be restricted to:
+Genome assembly was performed using **AutoCycler v0.5.2** with fully automated commands. Input assemblies were restricted to:
 
 - **Flye v2.9.6**  
 - **Raven v1.8.3**  
 - **NECAT v0.0.1_update20200803**
 
-This selection was intended to generate high-quality input assemblies using different assembly paradigms, including **A-Bruijn graph** and **overlap-layout-consensus (OLC)** approaches, in order to reduce errors while maximizing completeness and contiguity. The number of computational threads will be set according to available computing resources. The assembly was carried out with an edited automated bash script provided by the developers of Autocycler on their Github page. The edits done were to select the chosen individual assembly tools. 
+This selection was intended to generate high-quality input assemblies using different assembly paradigms, including **A-Bruijn graph** and **overlap-layout-consensus (OLC)** approaches, in order to reduce errors while maximizing completeness and contiguity. The number of computational threads were set according to available computing resources. The assembly was carried out with an edited automated bash script provided by the developers of Autocycler on their Github page. The edits made were to select the chosen individual assembly tools. 
 
-The bash script can be found in this repository () (Chen et al., 2021; Kolmogorov et al., 2019; Vaser & Šikić, 2021; Wick et al., 2025).
+The edited bash script can be found in this repository ([Autocyler Script](Scripts/autocycler_full.sh)) (Chen et al., 2021; Kolmogorov et al., 2019; Vaser & Šikić, 2021; Wick et al., 2025).
+
+The script was run with the following command with the arguments being the input fastq, number of threads, and parralel jobs respectively.
+
+```bash
+autocycler_full.sh filtered_seqs.fastq 2 1
+```
 
 ---
 
 ### Alignment
 
-### Alignment
+The assembled genome was  aligned to the reference genome using **minimap2 v2.30**. The `-a` option was specified to output alignments in **SAM format** for downstream processing and visualization. The number of threads were adjusted based on available computational capacity(Li, 2021).  
 
-The assembled genome will be aligned to the reference genome using **minimap2 v2.30**. The `-a` option will be specified to output alignments in **SAM format** for downstream processing and visualization. The number of threads will be adjusted based on available computational capacity(Li, 2021).  
-
-Additional options for assembly-to-reference alignment include:
+Additional options for assembly-to-reference alignment included:
 
 ```bash
 -x asm5   # assembly to genome alignment
--r2k      # maintain long, unbroken alignments
 --cs      # include the exact sequence of every difference in the output
+```
+The following command was used:
+
+```bash
+minimap2 -ax asm5 --cs GCF_000006945.2_ASM694v2_genomic.fna autocycler_out/consensus_assembly.fasta > salmonella_aln.sam
 ```
 
 ---
 
 ### Sorting and Indexing
 
-SAM files will be converted to BAM format using:
+SAM files were converted to BAM format using:
 
 ```bash
-samtools view -bS input.sam -o output.bam
+samtools view -bS salmonella_aln.sam -o salmonella.bam
 ```
 
-The resulting BAM files will then be sorted and indexed using:
+The resulting BAM files were then sorted and indexed using:
 
 ```bash
-samtools sort output.bam -o sorted.bam
-samtools index sorted.bam
+samtools sort salmonella.bam -o salmonella_sorted.bam
+samtools index salmonella_sorted.bam
 ```
 ---
 ### Variant Calling
 
-Variant calling will be performed using **SVIM-asm v1.0.3** (Heller & Vingron, 2021) for assembly-to-reference comparison. The following command will be used:
+Variant calling was performed using **SVIM-asm v1.0.3** (Heller & Vingron, 2021) for assembly-to-reference comparison. The following command was used:
 
 ```bash
-svim-asm haploid output_dir sorted.bam reference.fa
+svim-asm haploid ../Assignment1 salmonella_sorted.bam GCF_000006945.2_ASM694v2_genomic.fna
 ```
 ---
 ### Visualization
 
-The indexed BAM files will be visualized against the reference genome FASTA file using the **Integrative Genomics Viewer (IGV v2.19.x)** to examine alignment quality and identify sequence variation using the VCF file generated from variant calling (Robinson et al., 2017).
+The indexed BAM files were visualized against the reference genome FASTA file using the **Integrative Genomics Viewer (IGV v2.19.x)** to examine alignment quality and identify sequence variation using the VCF file generated from variant calling (Robinson et al., 2017). 
+
+The fasta files from the consensus assembly were also assessed using Bandage v0.9.0 to check for contiguity of the generated assembly (Wick et al., 2015). 
+
+The assembly was also visualized using mummer 4.0.1 to produce a dot plot showing the position of variants in comparison to the reference assembly (Marçais et al., 2018).
+
+The following code was used to generate the mummer dotplot:
+```bash
+nucmer --prefix=salmonella_asm_vs_ref GCF_000006945.2_ASM694v2_genomic.fna consensus_assembly.fasta
+delta-filter -1 salmonella_asm_vs_ref.delta > salmonella_asm_vs_ref.filtered.delta
+mummerplot --fat --layout  --filter --png  -p salmonella_dotplot  salmonella_asm_vs_ref.filtered.delta
+```
+
 
 
 ---
