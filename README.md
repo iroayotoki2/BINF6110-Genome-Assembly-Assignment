@@ -144,8 +144,15 @@ The Structural variants and the genes associated with them were identified using
 
 (Obenchain et al., 2014)
 
-
 ---
+
+## Results
+
+### Filtering Results
+
+The filtering was shown to be successful seen in the plots provdied by NanoPlot which show that reads with quality score below 10 and length below 1000 were filtered. 
+
+
 
 ### References
 Brown, E. W., Bell, R., Zhang, G., Timme, R., Zheng, J., Hammack, T. S., & Allard, M. W. (2021). Salmonella Genomics in Public Health and Food Safety. EcoSal Plus, 9(2). https://doi.org/10.1128/ECOSALPLUS.ESP-0008-2020
