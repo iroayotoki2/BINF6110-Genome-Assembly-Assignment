@@ -150,7 +150,11 @@ The Structural variants and the genes associated with them were identified using
 
 ### Filtering Results
 
-The filtering was shown to be successful seen in the plots provdied by NanoPlot which show that reads with quality score below 10 and length below 1000 were filtered. 
+The filtering was shown to be successful with the plots provdied by NanoPlot which show that reads with quality score below 10 and length below 1000 were filtered. 
+
+![Length vs Quality Dotplot](QC_Report/LengthvsQualityScatterPlot_dot.png)
+
+Other plots and statistics from the filtering can be found in the [NanoPlot Report](https://github.com/iroayotoki2/BINF6110-Genome-Assembly-Assignment/blob/main/QC_Report/NanoPlot%20Report.pdf)
 
 
 
