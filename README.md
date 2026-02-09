@@ -216,6 +216,13 @@ Variant analysis also identified an insertion within an STM locus (STM2793). STM
 
 An insertion at the ileX locus was further identified , which encodes a tRNA specific for isoleucine. tRNA genes are highly conserved components of the translational machinery and are also recognized as preferential integration sites for mobile genetic elements due to their conserved sequences and stable transcriptional activity. Insertions within or adjacent to tRNA genes can disrupt tRNA availability, alter local chromosomal architecture, or introduce regulatory elements that affect the expression of neighboring genes. Although bacteria often carry multiple copies of isoleucine tRNAs, disruption of ileX may still result in codon-specific translational inefficiency, ribosomal pausing, or activation of global stress responses, particularly under conditions of rapid growth or environmental stress. Such effects are typically non-lethal but can influence fitness, growth dynamics, and adaptive capacity. In Salmonella, genome evolution studies have shown that insertions at conserved loci, including tRNA genes, contribute to long-term genomic remodeling while being tolerated due to functional redundancy, reinforcing their role in shaping stable yet adaptable bacterial genomes (Andrews-Polymenis et al., 2009).
 
+---
+
+### Conclusion
+
+A draft genome assembly was successfully generated and evaluated, providing sufficient quality for downstream variant analysis. Structural variant analysis identified deletions of the transposase genes tnpA_3 and tnpA_4, as well as insertions affecting STM2793 and the tRNA gene ileX. The loss of tnpA genes is likely to reduce transposition activity and genome rearrangement, contributing to long-term genome stabilization or “genomic freezing.” In contrast, insertions in STM and ileX loci are expected to influence bacterial fitness and adaptation through regulatory or translational effects rather than essential functional disruption. Overall, this study demonstrates how genome assembly and structural variant analysis can provide meaningful insights into bacterial genome evolution.
+
+---
 
 ### References
 Andrews-Polymenis, H. L., Santiviago, C. A., & McClelland, M. (2009). Novel genetic tools for studying food-borne Salmonella. Current Opinion in Biotechnology, 20(2), 149–157. https://doi.org/10.1016/j.copbio.2009.02.002
