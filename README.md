@@ -137,6 +137,12 @@ delta-filter -1 salmonella_asm_vs_ref.delta > salmonella_asm_vs_ref.filtered.del
 mummerplot --fat --layout  --filter --png  -p salmonella_dotplot  salmonella_asm_vs_ref.filtered.delta
 ```
 
+---
+### Structural Variant Identification
+
+The Structural variants and the genes associated with them were identified using the bioconductor package **VariantAnnotation** which takes the VCF file from variant calling and the annotation file of the reference genome as input. This was done with an R Script available in this repository - ([SV Annotation](Scripts/SV_Annotation))
+
+(Obenchain et al., 2014)
 
 
 ---
