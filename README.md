@@ -157,7 +157,52 @@ The filtering was shown to be successful with the plots provdied by NanoPlot whi
 
 Other plots and statistics from the filtering can be found in the [NanoPlot Report](https://github.com/iroayotoki2/BINF6110-Genome-Assembly-Assignment/blob/main/QC_Report/NanoPlot%20Report.pdf)
 
-Assembly results 
+---
+### Assembly results 
+
+The workflow  for a de novo assembly using autocycler was successful and produced a single contig assembled genome that can be found in the [Assembly FASTA file](./consensus_assembly.fasta). This contiguity was assessed using the bandage plot which is seen below. While these results show contiguity there are still structural variations which are seen in the downstream analysis. The dotplot seen below also shows the average position of the variants in the assembled genome in comparison with the reference. 
+
+![Bandage Plot](Images/Bandage_graph.png)
+
+Figure 2 Bandage visualization of the assembly graph showing a single circular contig, with a small unresolved repeat-associated subgraph.
+
+![Dotplot](Images/salmonella_dotplot.png)
+
+Figure 3 Dotplot comparing the assembled genome to the reference sequence, where deviations from the main diagonal indicate potential structural variation.
+
+---
+### Variant Calling
+The variant calling with SVIM-asm showed 6 insertions and 5 deletions and produced a [VCF File](variants.vcf) as its major output. These were viewed with the reference and BAM assembly files were visualized in the genome viewer showing the structural variations up to the nucleotide level.
+![IGV showing all variants](https://github.com/iroayotoki2/BINF6110-Genome-Assembly-Assignment/blob/main/Images/IGV%20Screenshot%203.png)
+
+Figure 4 An IGV screenshot showing the position of variants in the assembly in blue streaks
+
+![IGV showing deletion](https://github.com/iroayotoki2/BINF6110-Genome-Assembly-Assignment/blob/main/Images/IGV%20Screenshot%201.png)
+
+Figure 5 An IGV screenshot showing the a large deletion of 33693 bases
+
+![IGV showing Alignment at nucleotide level](https://github.com/iroayotoki2/BINF6110-Genome-Assembly-Assignment/blob/main/Images/IGV%20Screenshot%204.png)
+
+Figure 6 An IGV screenshot showing Alignment at the nucleotide level
+
+---
+
+### Variant Annotation 
+The Variant annotation analysis using the VCF file and the reference genome annotation (gff) identified 5 genes associated with the indels seen in the VCF file while the indels not associated with any genes were labeled as intergenic. The table below shows the indels associated with genes with the deletions having a negative value and the insertions having a  positive value.  
+
+| Chromosome   | Start   | End     | SV length (bp) | Gene     |
+|--------------|---------|---------|----------------|----------|
+| NC_003197.2  | 2579220 | 2579931 | -711           | tnpA_3   |
+| NC_003197.2  | 2772539 | 2772539 | 42             | STM2632  |
+| NC_003197.2  | 2844268 | 2877961 | -33693         | STM2739  |
+| NC_003197.2  | 3194213 | 3194925 | -712           | tnpA_4   |
+| NC_003197.2  | 3379041 | 3379041 | 31976          | ileX     |
+
+The full table can be seen in the [SV Annotations](SV_biological_impact_summary.csv) file. 
+
+![Genic vs Intergenic](Images/SV_impact_barplot.png)
+
+Figure 7 A Barplot showing the distribution of genic and intergenic variations among Indels.
 
 ### References
 Brown, E. W., Bell, R., Zhang, G., Timme, R., Zheng, J., Hammack, T. S., & Allard, M. W. (2021). Salmonella Genomics in Public Health and Food Safety. EcoSal Plus, 9(2). https://doi.org/10.1128/ECOSALPLUS.ESP-0008-2020
