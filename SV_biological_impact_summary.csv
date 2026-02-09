@@ -1,0 +1,12 @@
+"chromosome","start","end","sv_type","sv_length","impact","gene"
+"NC_003197.2",2488560,2488560,"INS",711,"intergenic",NA
+"NC_003197.2",2557500,2557500,"INS",711,"intergenic",NA
+"NC_003197.2",2579220,2579931,"DEL",-711,"genic","tnpA_3"
+"NC_003197.2",2772539,2772539,"INS",42,"genic","STM2632"
+"NC_003197.2",2844268,2877961,"DEL",-33693,"genic","STM2739"
+"NC_003197.2",2885601,2885683,"DEL",-82,"intergenic",NA
+"NC_003197.2",3078126,3078126,"INS",61,"intergenic",NA
+"NC_003197.2",3096176,3096237,"DEL",-61,"intergenic",NA
+"NC_003197.2",3101505,3101505,"INS",777,"intergenic",NA
+"NC_003197.2",3194213,3194925,"DEL",-712,"genic","tnpA_4"
+"NC_003197.2",3379041,3379041,"INS",31976,"genic","ileX"
