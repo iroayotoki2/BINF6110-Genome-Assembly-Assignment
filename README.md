@@ -218,6 +218,8 @@ An insertion at the ileX locus was further identified , which encodes a tRNA spe
 
 
 ### References
+Andrews-Polymenis, H. L., Santiviago, C. A., & McClelland, M. (2009). Novel genetic tools for studying food-borne Salmonella. Current Opinion in Biotechnology, 20(2), 149–157. https://doi.org/10.1016/j.copbio.2009.02.002
+
 Brown, E. W., Bell, R., Zhang, G., Timme, R., Zheng, J., Hammack, T. S., & Allard, M. W. (2021). Salmonella Genomics in Public Health and Food Safety. EcoSal Plus, 9(2). https://doi.org/10.1128/ECOSALPLUS.ESP-0008-2020
 
 Carpenter, S., & Conlan, R. S. (2021). Clinical Functional Genomics. Cancers, 13(18), 4627. https://doi.org/10.3390/CANCERS13184627
@@ -230,6 +232,8 @@ De Coster, W., & Rademakers, R. (2023). NanoPack2: population-scale evaluation o
 
 Heller, D., & Vingron, M. (2021). SVIM-asm: structural variant detection from haploid and diploid genome assemblies. Bioinformatics, 36(22–23), 5519–5521. https://doi.org/10.1093/BIOINFORMATICS/BTAA1034
 
+Herrero-Fresno, A., Rodicio, R., Montero, I., García, P., & Rodicio, M. R. (2015). Transposition and homologous recombination drive evolution of pUO-StVR2, a multidrug resistance derivative of pSLT, the virulence plasmid specific of Salmonella enterica serovar Typhimurium. Infection, Genetics and Evolution, 29, 99–102. https://doi.org/10.1016/j.meegid.2014.11.010
+
 Kolmogorov, M., Yuan, J., Lin, Y., & Pevzner, P. A. (2019). Assembly of long, error-prone reads using repeat graphs. Nature Biotechnology 2019 37:5, 37(5), 540–546. https://doi.org/10.1038/s41587-019-0072-8
 
 Kumar, M. S., Krishna, M. B., Soman, K. P., Stanley, J., Pourmand, N., Suravajhala, P., & Babu, T. G. S. (2025). Benchmarking long-read assembly tools and preprocessing strategies for bacterial genomes: A case study on E. coli DH5α. Biotechnology Reports, 48, e00931. https://doi.org/10.1016/J.BTRE.2025.E00931
@@ -238,10 +242,16 @@ Li, H. (2021). New strategies to improve minimap2 alignment accuracy. Bioinforma
 
 Logsdon, G. A., Vollger, M. R., & Eichler, E. E. (2020). Long-read human genome sequencing and its applications. Nature Reviews. Genetics, 21(10), 597. https://doi.org/10.1038/S41576-020-0236-X
 
+Marçais, G., Delcher, A. L., Phillippy, A. M., Coston, R., Salzberg, S. L., & Zimin, A. (2018). MUMmer4: A fast and versatile genome alignment system. PLOS Computational Biology, 14(1), e1005944. https://doi.org/10.1371/journal.pcbi.1005944
+
+Obenchain, V., Lawrence, M., Carey, V., Gogarten, S., Shannon, P., & Morgan, M. (2014). VariantAnnotation: A Bioconductor package for exploration and annotation of genetic variants. Bioinformatics, 30(14), 2076–2078. https://doi.org/10.1093/bioinformatics/btu168
+
 Robinson, J. T., Thorvaldsdóttir, H., Wenger, A. M., Zehir, A., & Mesirov, J. P. (2017). Variant review with the integrative genomics viewer. Cancer Research, 77(21), e31–e34. https://doi.org/10.1158/0008-5472.CAN-17-0337/SUPPLEMENTARY-VIDEO-S1
 
 Saada, B., Zhang, T., Siga, E., Zhang, J., & Magalhães Muniz, M. M. (2024). Whole-Genome Alignment: Methods, Challenges, and Future Directions. Applied Sciences 2024, Vol. 14, Page 4837, 14(11), 4837. https://doi.org/10.3390/APP14114837
 
 Vaser, R., & Šikić, M. (2021). Time- and memory-efficient genome assembly with Raven. Nature Computational Science 2021 1:5, 1(5), 332–336. https://doi.org/10.1038/s43588-021-00073-4
+
+Wick, R. R., Schultz, M. B., Zobel, J., & Holt, K. E. (2015). Bandage: interactive visualization of de novo genome assemblies. Bioinformatics, 31(20), 3350–3352. https://doi.org/10.1093/bioinformatics/btv383
 
 Wick, R. R., Howden, B. P., & Stinear, T. P. (2025). Autocycler: long-read consensus assembly for bacterial genomes. Bioinformatics, 41(9). https://doi.org/10.1093/BIOINFORMATICS/BTAF474
